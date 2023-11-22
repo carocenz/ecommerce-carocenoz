@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { Context } from "../context/CartContext";
+import { Context } from "../../context/CartContext";
+import Description from "./Description";
+import ItemQuantitySelector from "./ItemQuantitySelector";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
@@ -18,21 +20,14 @@ const ItemDetailContainer = () => {
         />
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2"> {itemSelected.name} </div>
-          <p class="text-gray-700 text-base"> {itemSelected.description} </p>
+          <Description> {itemSelected.description} </Description>
         </div>
-        <button
-          onClick={() => console.log(itemSelected.id)}
-          class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >
-          Agregar al carrito
-        </button>
+        <ItemQuantitySelector selected={itemSelected} />
       </div>
     );
   }
 
-  return(
-    <div> This product doesnt exists</div>
-  )
+  return <div> This product doesnt exists</div>;
 };
 
 export default ItemDetailContainer;

@@ -1,9 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
-import ItemDetailContainer from "./ItemDetailContainer";
-import { items } from "../utils/items";
+import { items } from "../../utils/items";
 import { useContext } from "react";
-import { Context } from "../context/CartContext";
-import ItemCard from "./ItemCard";
+import { Context } from "../../context/CartContext";
+import ItemCard from "../ItemCard/index";
 
 const ItemListContainer = ({ greetings }) => {
   const { categoryId } = useParams();

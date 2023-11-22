@@ -1,14 +1,12 @@
 import { useState } from "react";
 import "./App.css";
-import Navbar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
+import Navbar from "./components/Navbar/index";
+import ItemListContainer from "./components/ItemListContainer/index";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ItemDetailContainer from "./components/ItemDetailContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/index";
 import CartContext from "./context/CartContext";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <CartContext>
       <BrowserRouter>
